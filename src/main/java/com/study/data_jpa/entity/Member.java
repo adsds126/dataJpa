@@ -2,6 +2,7 @@ package com.study.data_jpa.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.domain.Page;
 
 @Entity @Getter @Setter
 @AllArgsConstructor
