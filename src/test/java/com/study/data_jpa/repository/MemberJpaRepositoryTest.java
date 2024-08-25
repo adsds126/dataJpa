@@ -17,7 +17,7 @@ class MemberJpaRepositoryTest {
     @Autowired
 MemberJpaRepository memberJpaRepository;
     @Autowired
-    private com.study.data_jpa.repository.memberRepository memberRepository;
+    private MemberRepository memberRepository;
 
     @Test
     void testMember() {

@@ -10,13 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @Transactional
@@ -24,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class MemberRepositoryTest {
 //Spring data Jpa 테스트
     @Autowired
-com.study.data_jpa.repository.memberRepository memberRepository;
+MemberRepository memberRepository;
     @Autowired
     private TeamRepository teamRepository;
 
@@ -176,5 +174,9 @@ com.study.data_jpa.repository.memberRepository memberRepository;
         System.out.println("member5 = " + member5);
 //then
         assertThat(resultCount).isEqualTo(3);
+    }
+    @Test
+    public void callCustom() {
+        List<Member> result = memberRepository.findMemberCustom();
     }
 }
