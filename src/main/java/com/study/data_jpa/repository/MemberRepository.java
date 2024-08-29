@@ -27,4 +27,6 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     @Modifying(clearAutomatically = true) // 이 쿼리가 나가고 em.clear 자동으로 해줌
     @Query("update Member m set m.age = m.age + 1 where m.age >= :age")
     int bulkAgePlus(@Param("age") int age);
+
+    List<UsernameOnly> findProjectionsByUsername(@Param("username") String username);
 }
